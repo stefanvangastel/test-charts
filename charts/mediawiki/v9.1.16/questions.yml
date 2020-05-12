@@ -24,7 +24,7 @@ questions:
     type: string
     label: Tag
 
-- variable: mediawiki.host
+- variable: mediawikiHost
   default: "mediawiki.example.com"
   type: string
   required: true
