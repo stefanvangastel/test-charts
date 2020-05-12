@@ -29,6 +29,20 @@ questions:
   type: string
   required: true
   label: FQDN hostname
-  group: "Mediawiki settings"
+  group: "Mediawiki DNS settings"
+
+- variable: mariadb.master.persistence.storageClass
+  default: ""
+  type: storageClass
+  required: false
+  label:  MariaDB PV storageClass
+  group: "Storage settings"
+
+- variable: persistence.storageClass
+  default: ""
+  type: storageClass
+  required: false
+  label:  Mediawiki PV storageClass
+  group: "Storage settings"
 
   
