@@ -31,18 +31,30 @@ questions:
   label: FQDN hostname
   group: "Mediawiki DNS settings"
 
-- variable: mariadb.master.persistence.storageClass
-  default: ""
-  type: storageclass
-  required: false
-  label:  MariaDB PV storageClass
+- variable: mariadb.master.persistence.enabled
+  default: true
+  label: "MariaDB persistence"
+  type: boolean
+  show_subquestion_if: true
   group: "Storage settings"
-
-- variable: persistence.storageClass
-  default: ""
-  type: storageclass
-  required: false
-  label:  Mediawiki PV storageClass
+  subquestions:
+  - variable: mariadb.master.persistence.storageClass
+    default: ""
+    type: storageclass
+    required: false
+    label:  MariaDB PV storageClass
+    
+- variable: persistence.enabled
+  default: true
+  label: "Mediawiki persistence"
+  type: boolean
+  show_subquestion_if: true
   group: "Storage settings"
+  subquestions:
+  - variable: persistence.storageClass
+    default: ""
+    type: storageclass
+    required: false
+    label:  Mediawiki PV storageClass
 
   
