@@ -7,6 +7,10 @@ metadata:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
+  {{- if .Values.service.loadBalancerIP }}
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: {{ .Values.mediawikiHost | quote }}
+  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   {{- if .Values.service.loadBalancerIP }}
