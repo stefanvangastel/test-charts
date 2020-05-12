@@ -33,14 +33,14 @@ questions:
 
 - variable: mariadb.master.persistence.storageClass
   default: ""
-  type: storageClass
+  type: storageclass
   required: false
   label:  MariaDB PV storageClass
   group: "Storage settings"
 
 - variable: persistence.storageClass
   default: ""
-  type: storageClass
+  type: storageclass
   required: false
   label:  Mediawiki PV storageClass
   group: "Storage settings"
