@@ -5,7 +5,7 @@ categories:
 questions:
 - variable: defaultImage
   default: true
-  description: "Use default Docker images"
+  description: "Use default Docker images for MediaWiki"
   label: Use Default Images
   type: boolean
   show_subquestion_if: false
@@ -21,6 +21,28 @@ questions:
     label: Repository
   - variable: image.tag
     default: "1.34.1-debian-10-r28"
+    type: string
+    label: Tag
+ 
+    
+- variable:  mariadb.master.defaultImage
+  default: true
+  description: "Use default Docker images for MariaDB"
+  label: Use Default Images
+  type: boolean
+  show_subquestion_if: false
+  group: "Container Images"
+  subquestions:
+  - variable:  mariadb.master.image.registry
+    default: "docker.io"
+    type: string
+    label: Registry
+  - variable:  mariadb.master.image.repository
+    default: "bitnami/mariadb"
+    type: string
+    label: Repository
+  - variable:  mariadb.master.image.tag
+    default: "10.3.22-debian-10-r107"
     type: string
     label: Tag
 
